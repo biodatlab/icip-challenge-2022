@@ -1,3 +1,6 @@
 torch
 mmdetection
 tensorflow
+ensemble-boxes
+tqdm
+Pillow
