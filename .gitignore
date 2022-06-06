@@ -135,3 +135,5 @@ models/*.pth
 models/*.py
 
 predictions/
+
+annotations.json
