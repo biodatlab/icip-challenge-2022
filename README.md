@@ -4,8 +4,11 @@ This repository hosts scripts for ICIP 2022 challenge for parasitic egg detectio
 [here](https://icip2022challenge.piclab.ai/) and leaderboard [here](https://icip2022challenge.piclab.ai/leaderboard/).
 Our technique uses continuous training using ensembling technique with pseudo label generation to achieve
 the final model. The details of the technique are discussed in the paper.
+![Proposed technique](/images/diagram.png)
 
-Below you can see the prediction of our final models on the given test set.
+Below you can see example bounding box and instance segmentation predictions of our final models on the given test set.
+
+![Example predictions](/images/example_predictions.jpg)
 
 ## Setup Instructions for Linux
 

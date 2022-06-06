@@ -1,3 +1,3 @@
 # Images
 
-Predicted images from the given test set.
+Predictions from the given test set.
