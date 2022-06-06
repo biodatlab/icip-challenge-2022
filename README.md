@@ -37,6 +37,17 @@ python predict_ensemble.py PATH_TO_IMAGES_FOLDER PATH_TO_MODEL_FOLDER --out SUBM
 Downloading the pretrained models can take around 10 minutes from the repository. For prediction, it takes
 around 20 minutes to predict and ensemble on the official test set of around 1650 images on a single NVIDIA RTX2080Ti.
 
+## Results and Models
+Individual models with their leaderboard scores, configs and checkpoints are shown in the table below. 
+| Backbone          | Architecture | Epochs | mIoU (Leaderboard) | Config                                                                                               | Checkpoint                                                                                          |
+|-------------------|--------------|--------|--------------------|------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------|
+| HRNet             | CascadeRCNN  | 10     | 0.927              | [config](https://f003.backblazeb2.com/file/icip-weights/cascade-rcnn-hrnetv2p-w32-10epoch.py)        | [ckpt](https://f003.backblazeb2.com/file/icip-weights/cascade-rcnn-hrnetv2p-w32-10epoch.pth)        |
+| HRNet             | HTC          | 10     | 0.928              | [config](https://f003.backblazeb2.com/file/icip-weights/htc_hrnetv2p_w32_10epoch.py)                 | [ckpt](https://f003.backblazeb2.com/file/icip-weights/htc_hrnetv2p_w32_10epoch.pth)                 |
+| X-101-32x4d-dcnv2 | HTC          | 10     | 0.928              | [config](https://f003.backblazeb2.com/file/icip-weights/htc_x101_64x4d_fpn_dconv_10epoch.py)         | [ckpt](https://f003.backblazeb2.com/file/icip-weights/htc_x101_64x4d_fpn_dconv_10epoch.pth)         |
+| R-101-dcnv2       | GFL          | 10     | 0.923              | [config](https://f003.backblazeb2.com/file/icip-weights/gfl_r101_fpn_dconv_c3-c5_mstrain_10epoch.py) | [ckpt](https://f003.backblazeb2.com/file/icip-weights/gfl_r101_fpn_dconv_c3-c5_mstrain_10epoch.pth) |
+| R-101-dcnv2       | TOOD         | 10     | 0.926              | [config](https://f003.backblazeb2.com/file/icip-weights/tood_r101_dconv_10epoch.py)                  | [ckpt](https://f003.backblazeb2.com/file/icip-weights/tood_r101_dconv_10epoch.pth)                  |
+
+
 ## Requirements
 
 See requirements in `requirements.txt` including
