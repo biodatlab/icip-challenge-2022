@@ -7,41 +7,26 @@ the final model. The details of the technique are discussed in the paper.
 
 ## Setup Instructions (Linux)
 
-Assuming Pytorch with GPU support is available
+Assuming Pytorch with GPU support is available.
 
 ```sh
-pip install mmcv-full -f https://download.openmmlab.com/mmcv/dist/{cu_version}/{torch_version}/index.html`
-cd mmdetection && pip install -e .
+pip install mmcv-full==1.15.2 -f https://download.openmmlab.com/mmcv/dist/cu113/torch1.11.0/index.html
+pip install mmdet==2.25.0
 ```
-
-## Training
-
-Assuming root data directory is at `/workspace/data/Chula-ParasiteEgg-11/` and pretrained weights are downloaded to `mmdetection/pretrained_models`
-Optionally, you can change `data_root` and `load_from` variables in `mmdetection/custom_models/configs/MODEL_CONFIG_NAME.py` as needed.
-
-```sh
-cd mmdetection
-python tools/train.py custom_models/configs/MODEL_CONFIG_NAME.py
-```
-
 ## Testing
-
+- First download the trained models using the script,
 ```sh
-cd mmdetection
-python tools/test.py workdirs/MODEL_CONFIG_NAME/MODEL_CONFIG_NAME.py workdirs/MODEL_CONFIG_NAME/epoch_12.pth --format-only --options='jsonfile_prefix=./results'
+cd models && bash get_model.sh
+```
+- Run the following to get the ensembled predctions.
+```sh
+python predict_ensemble.py PATH_TO_IMAGES_FOLDER PATH_TO_MODEL_FOLDER --out SUBMISSION_JSON_FILE_NAME
 ```
 
-This will create `results.bbox.json` file with the model predictions in mmdetection dir.
-
-```sh
-python tools/test.py workdirs/MODEL_CONFIG_NAME/MODEL_CONFIG_NAME.py workdirs/MODEL_CONFIG_NAME/epoch_12.pth --eval=bbox
-```
-
-to get bbox mAP without saving the results.
-
+Downloading the pretrained models can take around 10 minutes. For prediction, it takes around 20 minutes to predict and ensemble on the official test set of around 1650 images on a single Nvidia RTX2080Ti.
 ## Requirements
 
 See requirements in `requirements.txt` including
 
 - [mmdetection](https://github.com/open-mmlab/mmdetection)
-- [Tensorflow model zoo](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/tf2_detection_zoo.md)
+
