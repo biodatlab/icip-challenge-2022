@@ -1,0 +1,10 @@
+wget https://f003.backblazeb2.com/file/icip-weights/cascade-rcnn-hrnetv2p-w32-10epoch.pth
+wget https://f003.backblazeb2.com/file/icip-weights/cascade-rcnn-hrnetv2p-w32-10epoch.py
+wget https://f003.backblazeb2.com/file/icip-weights/gfl_r101_fpn_dconv_c3-c5_mstrain_10epoch.pth
+wget https://f003.backblazeb2.com/file/icip-weights/gfl_r101_fpn_dconv_c3-c5_mstrain_10epoch.py
+wget https://f003.backblazeb2.com/file/icip-weights/htc_hrnetv2p_w32_10epoch.pth
+wget https://f003.backblazeb2.com/file/icip-weights/htc_hrnetv2p_w32_10epoch.py
+wget https://f003.backblazeb2.com/file/icip-weights/htc_x101_64x4d_fpn_dconv_10epoch.pth
+wget https://f003.backblazeb2.com/file/icip-weights/htc_x101_64x4d_fpn_dconv_10epoch.py
+wget https://f003.backblazeb2.com/file/icip-weights/tood_r101_dconv_10epoch.pth
+wget https://f003.backblazeb2.com/file/icip-weights/tood_r101_dconv_10epoch.py

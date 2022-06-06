@@ -1,6 +1,8 @@
-torch
-mmdetection
-tensorflow
-ensemble-boxes
-tqdm
-Pillow
+torch==1.11.0
+torchvision==0.12.0
+mmdet==2.25.0
+mmcv-full==1.5.2
+numba==0.55.1
+ensemble-boxes==1.0.9
+tqdm==4.64.0
+Pillow==9.0.1

@@ -130,3 +130,8 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+models/*.pth
+models/*.py
+
+predictions/
