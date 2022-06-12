@@ -1,9 +1,14 @@
 # Parasitic Egg Detection and Classification in Microscopic Images: ICIP 2022 Challenge
 
-This repository hosts scripts for ICIP 2022 challenge for parasitic egg detection. See the challenge website
-[here](https://icip2022challenge.piclab.ai/) and leaderboard [here](https://icip2022challenge.piclab.ai/leaderboard/).
-Our technique uses continuous training using ensembling technique with pseudo label generation to achieve
-the final model. The details of the technique are discussed in the paper.
+This repository hosts scripts for [ICIP 2022 challenge](https://2022.ieeeicip.org/challenges/) for parasitic egg detection
+from [Biomedical and Data Lab at Mahidol University, Thailand](https://biodatlab.github.io/).
+You can see the challenge website [here](https://icip2022challenge.piclab.ai/).
+Our technique applies mulitask learning with pseudo mask generation which outperform single task model.
+Moreover, we use continuous training using ensembling technique with pseudo label generation to achieve
+the best-performing model (rank 3 on the test leaderboard). The details of the technique are discussed in our paper
+_"Multitask learning via pseudo-label generation and ensemble prediction for parasitic egg cell detection: IEEE ICIP Challenge 2022"_
+(on arXiv, to release at the conference).
+
 ![Proposed technique](/images/diagram.png)
 
 Below you can see example bounding box and instance segmentation predictions of our final models on the given test set.
