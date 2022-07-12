@@ -1,13 +1,14 @@
-# Parasitic Egg Detection and Classification in Microscopic Images: ICIP 2022 Challenge
+# Multitask learning via pseudo-label generation and ensemble prediction for parasitic egg cell detection: IEEE ICIP Challenge 2022
 
-This repository hosts scripts for [ICIP 2022 challenge](https://2022.ieeeicip.org/challenges/) for parasitic egg detection
+This repository hosts scripts for [ICIP 2022 challenge](https://2022.ieeeicip.org/challenges/)
+for parasitic egg detection and classification in Microscopic images 
 from [Biomedical and Data Lab at Mahidol University, Thailand](https://biodatlab.github.io/).
 You can see the challenge website [here](https://icip2022challenge.piclab.ai/).
 Our technique applies mulitask learning with pseudo mask generation which outperform single task model.
 Moreover, we use continuous training using ensembling technique with pseudo label generation to achieve
 the best-performing model (rank 3 on the test leaderboard). The details of the technique are discussed in our paper
 _"Multitask learning via pseudo-label generation and ensemble prediction for parasitic egg cell detection: IEEE ICIP Challenge 2022"_
-(on arXiv, to release at the conference).
+(to release at the [ICIP conference 2022](https://2022.ieeeicip.org/)).
 
 ![Proposed technique](/images/diagram.png)
 
@@ -58,3 +59,9 @@ Individual models with their leaderboard scores, configs and checkpoints are sho
 See requirements in `requirements.txt` including
 
 - [mmdetection](https://github.com/open-mmlab/mmdetection)
+
+## Authors
+
+- Zaw Htet Aung, Department of Biomedical Engineering, Mahidol University, Nakhon Pathom, Thailand
+- Kittinan Srithaworn, Looloo technology, Bangkok, Thailand
+- Titipat Achakulvisut, Department of Biomedical Engineering, Mahidol University, Nakhon Pathom, Thailand
