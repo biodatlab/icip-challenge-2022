@@ -62,6 +62,6 @@ See requirements in `requirements.txt` including
 
 ## Authors
 
-- Zaw Htet Aung, Department of Biomedical Engineering, Mahidol University, Thailand
+- [Zaw Htet Aung](https://github.com/z-zawhtet-a), Department of Biomedical Engineering, Mahidol University, Thailand
 - [Kittinan Srithaworn](https://github.com/kittinan), Looloo technology, Thailand
 - [Titipat Achakulvisut](github.com/titipata/), Department of Biomedical Engineering, Mahidol University, Thailand
