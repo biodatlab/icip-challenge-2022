@@ -1,20 +1,29 @@
 # Multitask learning via pseudo-label generation and ensemble prediction for parasitic egg cell detection: IEEE ICIP Challenge 2022
 
 This repository hosts scripts for [ICIP 2022 challenge](https://2022.ieeeicip.org/challenges/)
-for parasitic egg detection and classification in Microscopic images 
+for parasitic egg detection and classification in Microscopic images
 from [Biomedical and Data Lab at Mahidol University, Thailand](https://biodatlab.github.io/).
 You can see the challenge website [here](https://icip2022challenge.piclab.ai/).
-Our technique applies mulitask learning with pseudo mask generation which outperform single task model.
-Moreover, we use continuous training using ensembling technique with pseudo label generation to achieve
-the best-performing model (rank 3 on the test leaderboard). The details of the technique are discussed in our paper
+
+Our technique applies:
+
+- **mulitask learning** using pseudo mask generated with DeepMAC which outperforms single task model.
+- **ensemble prediction** using multiple detection models
+- **pseudo-label generation** on test dataset to continue training the models
+
+Our best-performing model got rank 3 on the test leaderboard. The details of the technique are discussed in our paper
 _"Multitask learning via pseudo-label generation and ensemble prediction for parasitic egg cell detection: IEEE ICIP Challenge 2022"_
-(to release at the [ICIP conference 2022](https://2022.ieeeicip.org/)).
+(to release at the [ICIP conference 2022](https://2022.ieeeicip.org/)). You can see the diagram below.
 
 ![Proposed technique](/images/diagram.png)
 
-Below you can see example bounding box and instance segmentation predictions of our final models on the given test set.
+Here, you can see example bounding box and instance segmentation predictions of our final models on the given test set.
 
 ![Example predictions](/images/example_predictions.jpg)
+
+And the example of single model prediction and ensemble prediction.
+
+![Single model predictions](/images/single_model_predictions.png)
 
 ## Setup Instructions for Linux
 
@@ -44,15 +53,15 @@ Downloading the pretrained models can take around 10 minutes from the repository
 around 20 minutes to predict and ensemble on the official test set of around 1650 images on a single NVIDIA RTX2080Ti.
 
 ## Results and Models
-Individual models with their leaderboard scores, configs and checkpoints are shown in the table below. 
-| Backbone          | Architecture | Epochs | mIoU (Leaderboard) | Config                                                                                               | Checkpoint                                                                                          |
-|-------------------|--------------|--------|--------------------|------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------|
-| HRNet             | CascadeRCNN  | 10     | 0.927              | [config](https://f003.backblazeb2.com/file/icip-weights/cascade-rcnn-hrnetv2p-w32-10epoch.py)        | [ckpt](https://f003.backblazeb2.com/file/icip-weights/cascade-rcnn-hrnetv2p-w32-10epoch.pth)        |
-| HRNet             | HTC          | 10     | 0.928              | [config](https://f003.backblazeb2.com/file/icip-weights/htc_hrnetv2p_w32_10epoch.py)                 | [ckpt](https://f003.backblazeb2.com/file/icip-weights/htc_hrnetv2p_w32_10epoch.pth)                 |
-| X-101-32x4d-dcnv2 | HTC          | 10     | 0.928              | [config](https://f003.backblazeb2.com/file/icip-weights/htc_x101_64x4d_fpn_dconv_10epoch.py)         | [ckpt](https://f003.backblazeb2.com/file/icip-weights/htc_x101_64x4d_fpn_dconv_10epoch.pth)         |
-| R-101-dcnv2       | GFL          | 10     | 0.923              | [config](https://f003.backblazeb2.com/file/icip-weights/gfl_r101_fpn_dconv_c3-c5_mstrain_10epoch.py) | [ckpt](https://f003.backblazeb2.com/file/icip-weights/gfl_r101_fpn_dconv_c3-c5_mstrain_10epoch.pth) |
-| R-101-dcnv2       | TOOD         | 10     | 0.926              | [config](https://f003.backblazeb2.com/file/icip-weights/tood_r101_dconv_10epoch.py)                  | [ckpt](https://f003.backblazeb2.com/file/icip-weights/tood_r101_dconv_10epoch.pth)                  |
 
+Individual models with their leaderboard scores, configs and checkpoints are shown in the table below.
+| Backbone | Architecture | Epochs | mIoU (Leaderboard) | Config | Checkpoint |
+|-------------------|--------------|--------|--------------------|------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------|
+| HRNet | CascadeRCNN | 10 | 0.927 | [config](https://github.com/biodatlab/icip-challenge-2022/blob/main/configs/cascade-rcnn-hrnetv2p-w32-10epoch.py) | [ckpt](https://f003.backblazeb2.com/file/icip-weights/cascade-rcnn-hrnetv2p-w32-10epoch.pth) |
+| HRNet | HTC | 10 | 0.928 | [config](https://github.com/biodatlab/icip-challenge-2022/blob/main/configs/htc_hrnetv2p_w32_10epoch.py) | [ckpt](https://f003.backblazeb2.com/file/icip-weights/htc_hrnetv2p_w32_10epoch.pth) |
+| X-101-32x4d-dcnv2 | HTC | 10 | 0.928 | [config](https://github.com/biodatlab/icip-challenge-2022/blob/main/configs/htc_x101_64x4d_fpn_dconv_10epoch.py) | [ckpt](https://f003.backblazeb2.com/file/icip-weights/htc_x101_64x4d_fpn_dconv_10epoch.pth) |
+| R-101-dcnv2 | GFL | 10 | 0.923 | [config](https://github.com/biodatlab/icip-challenge-2022/blob/main/configs/gfl_r101_fpn_dconv_c3-c5_mstrain_10epoch.py) | [ckpt](https://f003.backblazeb2.com/file/icip-weights/gfl_r101_fpn_dconv_c3-c5_mstrain_10epoch.pth) |
+| R-101-dcnv2 | TOOD | 10 | 0.926 | [config](https://github.com/biodatlab/icip-challenge-2022/blob/main/configs/tood_r101_dconv_10epoch.py) | [ckpt](https://f003.backblazeb2.com/file/icip-weights/tood_r101_dconv_10epoch.pth) |
 
 ## Requirements
 
@@ -63,5 +72,5 @@ See requirements in `requirements.txt` including
 ## Authors
 
 - [Zaw Htet Aung](https://github.com/z-zawhtet-a), Department of Biomedical Engineering, Mahidol University, Thailand
-- [Kittinan Srithaworn](https://github.com/kittinan), Looloo technology, Thailand
+- [Kittinan Srithaworn](https://github.com/kittinan), [Looloo technology](https://loolootech.com/), Thailand
 - [Titipat Achakulvisut](github.com/titipata/), Department of Biomedical Engineering, Mahidol University, Thailand
