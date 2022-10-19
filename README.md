@@ -13,11 +13,12 @@ Our technique applies:
 
 Our best-performing model got rank 3 on the test leaderboard. The details of the technique are discussed in our paper
 _"Multitask learning via pseudo-label generation and ensemble prediction for parasitic egg cell detection: IEEE ICIP Challenge 2022"_
-(to release at the [ICIP conference 2022](https://2022.ieeeicip.org/)). You can see the diagram below.
+(available at [IEEE ICIP 2022 at https://ieeexplore.ieee.org/document/9897464](https://ieeexplore.ieee.org/document/9897464)).
+You can see the diagram of the proposed techniques below.
 
 ![Proposed technique](/images/diagram.png)
 
-Here, you can see example bounding box and instance segmentation predictions of our final models on the given test set.
+For qualitative analysis, you can see example bounding box and instance segmentation predictions of our final models on the given test set.
 
 ![Example predictions](/images/example_predictions.jpg)
 
