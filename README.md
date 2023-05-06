@@ -7,14 +7,13 @@ You can see the challenge website [here](https://icip2022challenge.piclab.ai/).
 
 Our technique applies:
 
-- **mulitask learning** using pseudo mask generated with DeepMAC which outperforms single task model.
+- **mulitask learning** using pseudo mask generated with [DeepMAC](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/deepmac.md) for multitask learning which outperforms single task model.
 - **ensemble prediction** using multiple detection models
-- **pseudo-label generation** on test dataset to continue training the models
+- **pseudo-label generation** on test dataset to continue training the detection models
 
-Our best-performing model got rank 3 on the test leaderboard. The details of the technique are discussed in our paper
-_"Multitask learning via pseudo-label generation and ensemble prediction for parasitic egg cell detection: IEEE ICIP Challenge 2022"_
-(available at [IEEE ICIP 2022 at https://ieeexplore.ieee.org/document/9897464](https://ieeexplore.ieee.org/document/9897464)).
-You can see the diagram of the proposed techniques below.
+Our best-performing model achieved rank 3 on the test leaderboard. The details of the technique are discussed in our paper titled
+_"Multitask learning via pseudo-label generation and ensemble prediction for parasitic egg cell detection: IEEE ICIP Challenge 2022,"_
+which is available at IEEE ICIP 2022 at [IEEE ICIP 2022 at https://ieeexplore.ieee.org/document/9897464](https://ieeexplore.ieee.org/document/9897464). Please refer to the diagram below for a visual representation of the proposed techniques.
 
 ![Proposed technique](/images/diagram.png)
 
@@ -50,8 +49,9 @@ python predict_ensemble.py PATH_TO_IMAGES_FOLDER PATH_TO_MODEL_FOLDER --out SUBM
 # python predict_ensemble.py examples/ models/ --out pred_output.json
 ```
 
-Downloading the pretrained models can take around 10 minutes from the repository. For prediction, it takes
-around 20 minutes to predict and ensemble on the official test set of around 1650 images on a single NVIDIA RTX2080Ti.
+It may take up to 10 minutes to download the pretrained models from the repository. When making predictions
+and ensembling on the official test set, a single NVIDIA RTX2080Ti may take around 20 minutes to complete
+the task for approximately 1650 test images.
 
 ## Results and Models
 
